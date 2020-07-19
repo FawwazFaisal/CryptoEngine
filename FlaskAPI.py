@@ -73,12 +73,12 @@ def DEC(cypher):
 	dec = decrypt_string(cypher)
 	return dec
 
-@app.route('/ERSA', methods=['GET'])
+@app.route('/ERSA', methods=['GET','POST'])
 def ERSA():
     res = ENC(flask.request.args.get("message"))
     return res
 
-@app.route('/DRSA', methods=['GET'])
+@app.route('/DRSA', methods=['GET','POST'])
 def DRSA():
     res = DEC(flask.request.args.get("cypher"))
     return res
