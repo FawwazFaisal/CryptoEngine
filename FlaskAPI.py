@@ -32,16 +32,16 @@ def modinv(e, PHI):
 e=65537
 d=modinv(e,PHI)
 
-enc_list = []
 def ENC(message):
+    enc_list = []
     for x in list(message):
         M=ord(x)
         enc=str(pow(M,e,N))
         enc_list.append(","+enc)
     return "".join(enc_list)
 
-dec_list = []
 def DEC(cypher):
+    dec_list = []
     for x in cypher.split(","):
         if(x=='' or x==","):
             continue
