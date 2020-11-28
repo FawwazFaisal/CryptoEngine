@@ -47,8 +47,8 @@ def modinv(e, PHI):
         return x % PHI
 
 def Keys():
-    p=number.getPrime(50, randfunc=Cryptodome.Random.get_random_bytes)
-    q=number.getPrime(50, randfunc=Cryptodome.Random.get_random_bytes)
+    p=number.getPrime(128, randfunc=Cryptodome.Random.get_random_bytes)
+    q=number.getPrime(128, randfunc=Cryptodome.Random.get_random_bytes)
     N=p*q
     PHI=(p-1)*(q-1)
     d=modinv(e,PHI)
